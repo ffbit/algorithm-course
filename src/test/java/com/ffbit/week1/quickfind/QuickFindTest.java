@@ -20,9 +20,7 @@ public class QuickFindTest {
 
     @Test
     public void itShouldBeReflexive() throws Exception {
-        int element = 0;
-
-        assertTrue(find.connected(element, element));
+        assertTrue(find.connected(0, 0));
     }
 
     @Test
