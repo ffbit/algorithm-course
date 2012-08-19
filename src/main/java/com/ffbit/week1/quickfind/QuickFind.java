@@ -7,7 +7,7 @@ public class QuickFind implements Find {
     public QuickFind(int capacity) {
         relationHolder = new int[capacity];
 
-        initRelationHolder();
+        fillRelationHolder();
     }
 
     @Override
@@ -28,7 +28,7 @@ public class QuickFind implements Find {
         }
     }
 
-    private void initRelationHolder() {
+    private void fillRelationHolder() {
         for (int i = 0; i < relationHolder.length; i++) {
             relationHolder[i] = i;
         }
