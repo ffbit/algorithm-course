@@ -12,7 +12,11 @@ public class QuickFind implements Find {
 
     @Override
     public boolean connected(int x, int y) {
-        return x == y || relationHolder[x] == relationHolder[y];
+        return isTheSame(x, y) || isConnectedToTheSameElement(x, y);
+    }
+
+    private boolean isConnectedToTheSameElement(int x, int y) {
+        return relationHolder[x] == relationHolder[y];
     }
 
     @Override
@@ -24,6 +28,10 @@ public class QuickFind implements Find {
         for (int i = 0; i < relationHolder.length; i++) {
             relationHolder[i] = i;
         }
+    }
+    
+    private boolean isTheSame(int x, int y) {
+        return x == y;
     }
 
 }
