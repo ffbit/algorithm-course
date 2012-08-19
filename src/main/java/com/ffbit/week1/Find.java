@@ -1,4 +1,4 @@
-package com.ffbit.week1.quickfind;
+package com.ffbit.week1;
 
 public interface Find {
 

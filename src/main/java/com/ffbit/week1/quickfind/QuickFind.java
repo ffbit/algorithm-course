@@ -1,5 +1,8 @@
 package com.ffbit.week1.quickfind;
 
+import com.ffbit.week1.Find;
+
+
 public class QuickFind implements Find {
 
     private int[] relationHolder;
