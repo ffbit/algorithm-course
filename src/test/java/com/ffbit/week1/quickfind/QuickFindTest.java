@@ -27,12 +27,9 @@ public class QuickFindTest {
     
     @Test
     public void itShouldBeConnected() throws Exception {
-        int x = 1;
-        int y = 2;
+        find.union(1, 2);
         
-        find.union(x, y);
-        
-        assertTrue(find.connected(x, y));
+        assertTrue(find.connected(1, 2));
     }
     
     @Test
