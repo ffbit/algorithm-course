@@ -30,6 +30,7 @@ public class QuickFindTest {
         find.union(1, 2);
 
         assertTrue(find.connected(1, 2));
+        assertTrue(find.connected(2, 1));
     }
 
     @Test
@@ -37,6 +38,7 @@ public class QuickFindTest {
         find.union(1, 2);
 
         assertFalse(find.connected(2, 3));
+        assertFalse(find.connected(3, 2));
     }
 
     @Test
