@@ -67,4 +67,16 @@ public class QuickFindTest {
         assertTrue(find.connected(3, 2));
     }
 
+    @Test
+    public void itShouldNotBeConnectedTransitiveThoughUnitedUnions()
+            throws Exception {
+        find.union(1, 2);
+
+        find.union(3, 4);
+
+        find.union(1, 4);
+
+        assertFalse(find.connected(0, 4));
+    }
+
 }
