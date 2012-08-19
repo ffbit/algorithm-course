@@ -23,11 +23,11 @@ public class QuickUnion implements Find {
     }
 
     private int getRootOf(int x) {
-        if (x == relationHolder[x]) {
-            return x;
-        } else {
-            return getRootOf(relationHolder[x]);
+        while (x != relationHolder[x]) {
+            x = relationHolder[x];
         }
+        
+        return x;
     }
 
     @Override
