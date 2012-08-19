@@ -1,5 +1,6 @@
 package com.ffbit.week1.quickfind;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
@@ -32,6 +33,13 @@ public class QuickFindTest {
         find.union(x, y);
         
         assertTrue(find.connected(x, y));
+    }
+    
+    @Test
+    public void itShouldNotBeConnected() throws Exception {
+        find.union(1, 2);
+        
+        assertFalse(find.connected(2, 3));
     }
 
 }
