@@ -21,7 +21,11 @@ public class QuickFind implements Find {
 
     @Override
     public void union(int x, int y) {
-        relationHolder[y] = relationHolder[x]; 
+        for (int i = 0; i <relationHolder.length; i++) {
+            if (relationHolder[y] == relationHolder[i]) {
+                relationHolder[i] = relationHolder[x];
+            }
+        }
     }
     
     private void initRelationHolder() {
