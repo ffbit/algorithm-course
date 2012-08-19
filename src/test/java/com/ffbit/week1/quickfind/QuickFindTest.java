@@ -26,17 +26,25 @@ public class QuickFindTest {
     }
     
     @Test
-    public void itShouldBeConnected() throws Exception {
+    public void itShouldBeSymmetricConnected() throws Exception {
         find.union(1, 2);
         
         assertTrue(find.connected(1, 2));
     }
     
     @Test
-    public void itShouldNotBeConnected() throws Exception {
+    public void itShouldNotBeSymmetricConnected() throws Exception {
         find.union(1, 2);
         
         assertFalse(find.connected(2, 3));
+    }
+    
+    @Test
+    public void itShouldBeConnectedTransitive() throws Exception {
+        find.union(1, 2);
+        find.union(2, 3);
+        
+        assertTrue(find.connected(1, 3));
     }
 
 }
