@@ -19,20 +19,20 @@ public class QuickUnion implements Find {
 
     @Override
     public boolean connected(int x, int y) {
-        return rootOf(x) == rootOf(y);
+        return getRootOf(x) == getRootOf(y);
     }
 
-    private int rootOf(int x) {
+    private int getRootOf(int x) {
         if (x == relationHolder[x]) {
             return x;
         } else {
-            return rootOf(relationHolder[x]);
+            return getRootOf(relationHolder[x]);
         }
     }
 
     @Override
     public void union(int x, int y) {
-        relationHolder[y] = rootOf(x);
+        relationHolder[getRootOf(y)] = getRootOf(x);
     }
 
 }
