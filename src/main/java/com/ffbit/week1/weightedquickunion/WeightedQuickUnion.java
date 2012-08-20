@@ -6,9 +6,12 @@ public class WeightedQuickUnion implements Find {
 
     private int[] holder;
 
+    private int[] size;
+
     public WeightedQuickUnion(int capacity) {
         holder = new int[capacity];
         fillHolder();
+        size = new int[capacity];
     }
 
     private void fillHolder() {
@@ -32,15 +35,16 @@ public class WeightedQuickUnion implements Find {
 
     @Override
     public void union(int x, int y) {
-        if (getDepthLevelOf(x) < getDepthLevelOf(y)) {
-            holder[getRootOf(y)] = getRootOf(x);
-        } else {
-            holder[getRootOf(x)] = getRootOf(y);
-        }
-    }
+        int rootOfX = getRootOf(x);
+        int rootOfY = getRootOf(y);
 
-    private int getDepthLevelOf(int x) {
-        return 0;
+        if (size[rootOfX] < size[rootOfY]) {
+            holder[rootOfY] = rootOfX;
+            size[rootOfX] += rootOfY;
+        } else {
+            holder[rootOfX] = rootOfY;
+            size[rootOfY] += rootOfX;
+        }
     }
 
 }
