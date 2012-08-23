@@ -4,9 +4,9 @@ public class BinarySearch {
 
     public int search(int[] input, int needle) {
         int start = 0;
-        int end = input.length;
+        int end = input.length - 1;
 
-        while (start < end) {
+        while (start <= end) {
             int middle = (start + end) / 2;
             
             if (input[middle] == needle) {

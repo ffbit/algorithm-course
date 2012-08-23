@@ -29,11 +29,13 @@ public class BinarySearchTest {
     @Parameters
     public static Collection<Object[]> parameters() {
         Object[][] params = {
-                { new int[] { 1, 2, 3, 5, 6, 7, 8, 9, 12, 15, 25 }, 1, 0 },
-                { new int[] { 1, 2, 3, 5, 6, 7, 8, 9, 12, 15, 25 }, 25, 10 },
-                { new int[] { 1, 2, 3, 5, 6, 7, 8, 9, 12, 15, 25 }, -2, -1 },
-                { new int[] { 1, 2, 3, 5, 6, 7, 8, 9, 12, 15, 25 }, 26, -12 },
-                { new int[] { 1, 2, 3, 5, 6, 7, 8, 9, 12, 15, 25 }, 8, 6 },
+                { new int[] { 1, 2, 3, 4, 5 }, -20, -1 },
+                { new int[] { 1, 2, 3, 4, 5 }, 1, 0 },
+                { new int[] { 1, 2, 3, 4, 5 }, 2, 1 },
+                { new int[] { 1, 2, 3, 4, 5 }, 3, 2 },
+                { new int[] { 1, 2, 3, 4, 5 }, 4, 3 },
+                { new int[] { 1, 2, 3, 4, 5 }, 5, 4 },
+                { new int[] { 1, 2, 3, 4, 5 }, 100, -6 },
                 { new int[] {}, 1, -1}
         };
 
@@ -49,5 +51,5 @@ public class BinarySearchTest {
     public void itShoultReturnRightIndex() throws Exception {
         assertThat(binarySearch.search(input, needle), equalTo(expected));
     }
-    
+
 }
