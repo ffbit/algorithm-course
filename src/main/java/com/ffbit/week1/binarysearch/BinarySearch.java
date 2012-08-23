@@ -11,9 +11,7 @@ public class BinarySearch {
             
             if (input[middle] == needle) {
                 return middle;
-            }
-
-            if (input[middle] < needle) {
+            } else if (input[middle] < needle) {
                 start = middle + 1;
             } else {
                 end = middle - 1;
