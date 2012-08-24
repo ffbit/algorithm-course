@@ -8,7 +8,7 @@ public class BinarySearchThreeSum implements ThreeSum {
 
     @Override
     public int[][] calculateTriplets(int[] data) {
-        List<int[]> result = new LinkedList<>();
+        List<int[]> result = new LinkedList<int[]>();
         int[] sortedData = getSortedData(data);
 
         for (int i = 0; i < sortedData.length; i++) {
@@ -22,8 +22,6 @@ public class BinarySearchThreeSum implements ThreeSum {
                 }
             }
         }
-        
-        System.out.println(Arrays.deepToString(result.toArray()));
 
         return result.toArray(new int[][] {});
     }
