@@ -37,6 +37,8 @@
 
     <reporting>
         <plugins>
+            <!-- Usage: `mvn clean package site` -->
+            <!-- For further information see - http://mojo.codehaus.org/findbugs-maven-plugin/usage.html -->
             <plugin>
                 <groupId>org.codehause.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
