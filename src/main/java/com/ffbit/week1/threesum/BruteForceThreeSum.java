@@ -3,8 +3,9 @@ package com.ffbit.week1.threesum;
 import java.util.LinkedList;
 import java.util.List;
 
-public class BruteForceThreeSum {
+public class BruteForceThreeSum implements ThreeSum {
 
+    @Override
     public int[][] calculateTriplets(int[] data) {
         List<int[]> result = new LinkedList<int[]>();
 
