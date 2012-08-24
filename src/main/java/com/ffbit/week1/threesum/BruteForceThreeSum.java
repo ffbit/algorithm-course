@@ -6,8 +6,8 @@ import java.util.List;
 public class BruteForceThreeSum implements ThreeSum {
 
     @Override
-    public int[][] calculateTriplets(int[] data) {
-        List<int[]> result = new LinkedList<int[]>();
+    public int[][] calculateTriplets(final int[] data) {
+        final List<int[]> result = new LinkedList<int[]>();
 
         for (int i = 0; i < data.length; i++) {
             for (int j = i + 1; j < data.length; j++) {

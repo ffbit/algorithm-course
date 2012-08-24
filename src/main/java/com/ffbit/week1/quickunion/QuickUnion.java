@@ -4,9 +4,9 @@ import com.ffbit.week1.Find;
 
 public class QuickUnion implements Find {
 
-    private int[] relationHolder;
+    private final int[] relationHolder;
 
-    public QuickUnion(int capacity) {
+    public QuickUnion(final int capacity) {
         relationHolder = new int[capacity];
         fillRelationHolder();
     }
@@ -18,20 +18,22 @@ public class QuickUnion implements Find {
     }
 
     @Override
-    public boolean connected(int x, int y) {
+    public boolean connected(final int x, final int y) {
         return getRootOf(x) == getRootOf(y);
     }
 
-    private int getRootOf(int x) {
-        while (x != relationHolder[x]) {
-            x = relationHolder[x];
+    private int getRootOf(final int x) {
+        int e = x;
+
+        while (e != relationHolder[x]) {
+            e = relationHolder[x];
         }
-        
-        return x;
+
+        return e;
     }
 
     @Override
-    public void union(int x, int y) {
+    public void union(final int x, final int y) {
         relationHolder[getRootOf(y)] = getRootOf(x);
     }
 

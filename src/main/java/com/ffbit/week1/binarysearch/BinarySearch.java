@@ -2,13 +2,13 @@ package com.ffbit.week1.binarysearch;
 
 public class BinarySearch {
 
-    public int search(int[] input, int needle) {
+    public int search(final int[] input, final int needle) {
         int start = 0;
         int end = input.length - 1;
 
         while (start <= end) {
-            int middle = start + (end - start) / 2;
-            
+            final int middle = start + (end - start) / 2;
+
             if (input[middle] == needle) {
                 return middle;
             } else if (input[middle] < needle) {

@@ -4,9 +4,9 @@ import com.ffbit.week1.Find;
 
 public class WeightedQuickUnion implements Find {
 
-    private int[] holder;
+    private final int[] holder;
 
-    public WeightedQuickUnion(int capacity) {
+    public WeightedQuickUnion(final int capacity) {
         holder = new int[capacity];
         fillHolder();
     }
@@ -18,11 +18,13 @@ public class WeightedQuickUnion implements Find {
     }
 
     @Override
-    public boolean connected(int x, int y) {
+    public boolean connected(final int x, final int y) {
         return getRootOf(x) == getRootOf(y);
     }
 
-    private int getRootOf(int e) {
+    private int getRootOf(final int x) {
+        int e = x;
+
         while (e != holder[e]) {
             holder[e] = holder[holder[e]];
             e = holder[e];
@@ -32,7 +34,7 @@ public class WeightedQuickUnion implements Find {
     }
 
     @Override
-    public void union(int x, int y) {
+    public void union(final int x, final int y) {
         holder[getRootOf(x)] = holder[getRootOf(y)];
     }
 
