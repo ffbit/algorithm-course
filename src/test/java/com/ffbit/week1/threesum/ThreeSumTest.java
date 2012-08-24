@@ -23,7 +23,7 @@ public abstract class ThreeSumTest {
     @Test
     public void itShoulReturnRightTriplets() throws Exception {
         int[][] triplets = threeSum.calculateTriplets(data);
-        
+
         assertThat(triplets.length, not(equalTo(0)));
 
         int[][] expecteds = {
