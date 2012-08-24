@@ -9,6 +9,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <checkstyle.config.location>${basedir}/config/custom_sun_checks.xml</checkstyle.config.location>
     </properties>
 
     <dependencies>
